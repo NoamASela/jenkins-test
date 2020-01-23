@@ -13,7 +13,6 @@ pipeline {
             echo 'Hello World'
             input ''
             sh 'ls /tmp/'
-            input ("")
             sh 'docker-compose up'
          }
       }
