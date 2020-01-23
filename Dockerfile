@@ -2,7 +2,7 @@ FROM docker:dind
 
 ENV USER=jenkins
 ENV UID=1000
-ENV GID=993
+ENV GID=1000
 
 RUN apk add curl
 USER root
