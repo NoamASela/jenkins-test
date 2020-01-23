@@ -1,5 +1,8 @@
 pipeline {
-   agent { dockerfile true }
+   agent { 
+      dockerfile true
+      args  '--privileged'
+   }
    stages {
       stage ('checkout ') {
           steps {
