@@ -2,6 +2,7 @@ pipeline {
    agent { 
       dockerfile {
          //args  '--privileged'
+         args '-v /var/run/docker.sock:/container/path/docker.sock'
       }
    }
    stages {
