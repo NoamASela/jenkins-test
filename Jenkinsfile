@@ -1,7 +1,7 @@
 pipeline {
    agent { 
       dockerfile {
-         args  '--privileged'
+         //args  '--privileged'
       }
    }
    stages {
