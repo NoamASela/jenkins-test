@@ -5,3 +5,4 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-c
 RUN chmod +x /usr/local/bin/docker-compose
 RUN ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 RUN chown jenkins:jenkins /usr/local/bin/docker-compose
+RUN chown jenkins:jenkins /usr/bin/docker-compose
