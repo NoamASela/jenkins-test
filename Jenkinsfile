@@ -10,7 +10,6 @@ pipeline {
       }
       stage('Hello') {
          steps {
-            sh 'whoami'
             echo 'Hello World'
             input ''
             sh 'ls /tmp/'
