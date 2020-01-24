@@ -1,7 +1,7 @@
 pipeline {
    agent { 
       docker { 
-        image 'docker:compose'
+        image 'docker/compose'
          args '-u root'
 //         args '--privileged -u root'
       }
