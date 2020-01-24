@@ -30,7 +30,7 @@ pipeline {
          agent { 
             docker { 
                image 'docker/compose'
-               args '-u root
+               args '-u root'
             }
          }
          steps {
