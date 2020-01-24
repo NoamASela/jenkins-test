@@ -1,6 +1,9 @@
 pipeline {
    agent { 
-      docker { image 'docker:dind' }
+      docker { 
+         image 'docker:dind'
+         args '--privileged'
+      }
 //         label 'agent-label-aws'
 //      dockerfile {
 //        args '-v /var/run/docker.sock:/var/run/docker.sock --group-add docker'
