@@ -1,13 +1,14 @@
 pipeline {
    agent { 
       docker { 
-         image 'docker:dind'
-         args '--privileged -u root'
-      }
-//         label 'noama-jenkins-agent-dind'
-//      dockerfile {
-//        args '-v /var/run/docker.sock:/var/run/docker.sock --group-add docker'
+//         image 'docker:dind'
+//         args '--privileged -u root'
 //      }
+//         label 'noama-jenkins-agent-dind'
+      dockerfile {
+        args '--privileged -u root'
+//        args '-v /var/run/docker.sock:/var/run/docker.sock --group-add docker'
+      }
    }
    stages {
       stage ('checkout ') {
