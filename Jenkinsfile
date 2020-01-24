@@ -1,6 +1,9 @@
 pipeline {
    agent { 
-         label 'agent-label-aws'
+         //label 'agent-label-aws'
+      dockerfile {
+         args '-v /var/run/docker.sock:/var/run/docker.sock'
+      }
    }
    stages {
       stage ('checkout ') {
