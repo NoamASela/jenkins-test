@@ -7,6 +7,7 @@ pipeline {
 //         label 'noama-jenkins-agent-dind'
       dockerfile {
 //        args '--privileged -u root'
+         args '-u root'
 //        args '-v /var/run/docker.sock:/var/run/docker.sock --group-add docker'
       }
    }
