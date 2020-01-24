@@ -1,15 +1,22 @@
 pipeline {
-   agent {
-      node {
-         docker.withServer('tcp://ec2-3-8-208-166.eu-west-2.compute.amazonaws.com:4243', 'docker 3') {
-            docker.image('httpd').withRun('-p 8080:80') {c ->
-               sh "curl -i http://${hostIp(c)}:8080/"
-            }
+   agent { 
+         label 'agent-label-aws'
+   }
+   stages {
+      stage ('checkout ') {
+          steps {
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
+            doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], 
+            userRemoteConfigs: [[url: 'https://github.com/dockersamples/example-voting-app.git']]])
+        }
+      }
+      stage('Hello') {
+         steps {
+            echo 'Hello World'
+            input ''
+            sh 'ls /tmp/'
+            sh 'docker-compose up'
          }
-  //        docker.withServer('tcp://ec2-3-8-208-166.eu-west-2.compute.amazonaws.com:4243', 'docker 3') {
- //             docker.image('docker:dind').withRun('-p 3306:3306') {
-     //         }
-    //      }
       }
    }
 }
