@@ -1,10 +1,10 @@
 pipeline {
    agent { 
-      docker { 
-         image 'docker:dind'
-         args '--privileged'
-      }
-//         label 'agent-label-aws'
+//      docker { 
+//         image 'docker:dind'
+//         args '--privileged'
+//      }
+         label 'noama-jenkins-agent-dind'
 //      dockerfile {
 //        args '-v /var/run/docker.sock:/var/run/docker.sock --group-add docker'
 //      }
