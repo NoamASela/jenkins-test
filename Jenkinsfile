@@ -21,8 +21,9 @@ pipeline {
       stage('Hello') {
          steps {
             echo 'Hello World'
+            sh 'whoami'
             input ''
-            sh 'ls /tmp/'
+            sh 'docker ps'
             sh 'docker-compose up'
          }
       }
