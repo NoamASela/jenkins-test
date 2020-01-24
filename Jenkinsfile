@@ -1,9 +1,10 @@
 pipeline {
    agent { 
-         //label 'agent-label-aws'
-      dockerfile {
-         args '-v /var/run/docker.sock:/var/run/docker.sock --group-add docker'
-      }
+      docker { image 'docker:dind' }
+//         label 'agent-label-aws'
+//      dockerfile {
+//        args '-v /var/run/docker.sock:/var/run/docker.sock --group-add docker'
+//      }
    }
    stages {
       stage ('checkout ') {
