@@ -1,6 +1,5 @@
 FROM jenkins/jnlp-slave
 USER root
-RUN groupadd docker -g 1000
 ENV DOCKERVERSION=18.06.3-ce
 RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKERVERSION}.tgz \
   && tar xzvf docker-${DOCKERVERSION}.tgz --strip 1 \
